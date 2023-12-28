@@ -26,7 +26,7 @@ const Button: React.FC<ButtonProps> = ({
 export default Button;
 
 const getButtonClasses = (variant: string) => {
-  let classes = "px-4 py-2 rounded-md font-medium  transition duration-300";
+  let classes = "px-4 py-2 rounded-md font-medium  transition duration-300 ";
 
   switch (variant) {
     case "primary":
