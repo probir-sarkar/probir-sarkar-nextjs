@@ -1,26 +1,49 @@
-import { FaReact } from "react-icons/fa";
+import { FaReact, FaNodeJs, FaGitAlt, FaAws } from "react-icons/fa";
+import { TbBrandRedux } from "react-icons/tb";
+import { SiExpress, SiMongodb, SiNextdotjs, SiRedis } from "react-icons/si";
+import {
+  BiLogoPostgresql,
+  BiLogoJavascript,
+  BiLogoTypescript,
+} from "react-icons/bi";
 
 export const mernStackSkills = [
   {
     category: "Frontend",
+    // some details about the category
+    description:
+      "I have experience in building interactive and responsive user interfaces using React.js.",
     skills: [
+      {
+        name: "JavaScript",
+        description:
+          "Leveraging the latest JavaScript methods and ES6 functional programming for creating robust and dynamic full-stack applications.",
+        icon: <BiLogoJavascript />,
+      },
+      {
+        name: "TypeScript",
+        description:
+          "Proficient in using TypeScript, a superset of JavaScript, for dynamic web applications, emphasizing a better developer experience (DX)",
+        icon: <BiLogoTypescript />,
+      },
       {
         name: "React.js",
         description:
-          "I am proficient in using React.js, a powerful JavaScript library for building user interfaces. I leverage React.js to create reusable UI components, ensuring efficiency and interactivity in the development of single-page applications.",
+          "Skilled in utilizing React.js to craft responsive and user-centric interfaces with reusable components, ensuring optimal performance.",
         icon: <FaReact />,
       },
       {
         name: "Next.js",
         description:
-          "I use Next.js, a React framework, to build server-side rendered (SSR) websites. This enables me to create dynamic web pages with faster page load times and improved SEO.",
+          "Experienced with Next.js for building server-rendered and static websites, creating performant and SEO-friendly web applications.",
+        icon: <SiNextdotjs />,
       },
       {
         name: "Redux",
         description:
-          "With expertise in Redux, I manage the state of my applications in a predictable way. This centralized state management is particularly beneficial in handling complex data flow within large-scale projects.",
+          "Adept in Redux for managing state in React, ensuring a streamlined and predictable data flow for scalable and maintainable code.",
+        icon: <TbBrandRedux />,
       },
-      // Add descriptions for other frontend skills as needed
     ],
   },
   {
@@ -29,12 +52,20 @@ export const mernStackSkills = [
       {
         name: "Node.js",
         description:
-          "I am skilled in using Node.js, a server-side JavaScript runtime, for building scalable and efficient network applications. This allows me to execute JavaScript code outside the browser environment.",
+          "Skilled in Node.js for scalable server-side apps, prioritizing asynchronous programming and efficient data handling.",
+        icon: <FaNodeJs />,
       },
       {
         name: "Express.js",
         description:
-          "In backend development, I rely on Express.js, a minimalist and flexible Node.js web application framework. It simplifies the process of building robust server-side logic for web and mobile applications.",
+          "Leveraging Express.js for modular server-side applications, prioritizing robust API creation and optimizing overall performance.",
+        icon: <SiExpress />,
+      },
+      {
+        name: "AWS",
+        description:
+          "Utilizing AWS S3 for storage and Elastic Beanstalk for hosting to deploy and manage Node.js applications efficiently.",
+        icon: <FaAws />,
       },
       // Add descriptions for other backend skills as needed
     ],
@@ -45,30 +76,32 @@ export const mernStackSkills = [
       {
         name: "MongoDB",
         description:
-          "My proficiency in MongoDB, a NoSQL database, allows me to store data in flexible, JSON-like documents. This choice is driven by MongoDB's scalability, flexibility, and ease of use, making it suitable for MERN stack applications.",
+          "Harnessing MongoDB for agile and rapid data storage, enabling efficient management of unstructured data in Node.js applications.",
+        icon: <SiMongodb />,
       },
       {
-        name: "Mongoose (ODM)",
+        name: "PostgreSQL",
         description:
-          "I use Mongoose, an Object Data Modeling (ODM) library, to interact with MongoDB and Node.js. It provides a higher-level, schema-based abstraction, simplifying database interactions.",
+          "Leveraging PostgreSQL for reliable and structured data storage, ensuring seamless management and retrieval in applications.",
+        icon: <BiLogoPostgresql />,
       },
-      // Add descriptions for other database skills as needed
+      {
+        name: "Redis",
+        description:
+          "Applying Redis to optimize data caching, ensuring high performance and efficient access in applications.",
+        icon: <SiRedis />,
+      },
     ],
   },
   {
     category: "Other",
     skills: [
       {
-        name: "Version Control (e.g., Git)",
+        name: "Git & GitHub",
         description:
-          "I utilize Git for version control, enabling collaborative software development by tracking changes to source code. This facilitates seamless management and coordination of changes in projects.",
+          "Using Git and GitHub for version control and collaboration, streamlining code management and project workflows.",
+        icon: <FaGitAlt />,
       },
-      {
-        name: "Package Managers (e.g., npm, yarn)",
-        description:
-          "Proficient in npm and yarn, I streamline the management of third-party libraries and dependencies in my projects. These package managers enhance efficiency in handling project dependencies.",
-      },
-      // Add descriptions for other general skills as needed
     ],
   },
 ];

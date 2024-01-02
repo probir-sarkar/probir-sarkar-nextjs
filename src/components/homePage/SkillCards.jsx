@@ -1,54 +1,70 @@
+// SkillCards.js
 "use client";
+import React from "react";
 import { FaCode } from "react-icons/fa";
 import { IconContext } from "react-icons";
 import { mernStackSkills } from "@/app/data";
+import { Tabs, Tab } from "@nextui-org/tabs";
+import { Card, CardHeader, CardBody } from "@nextui-org/react";
 
 const SkillCards = () => {
+  const allSkills = mernStackSkills.flatMap(
+    (skillCategory) => skillCategory.skills
+  );
+  const finalSkills = [
+    { category: "All", skills: allSkills },
+    ...mernStackSkills,
+  ];
   return (
-    <IconContext.Provider value={{ size: "2em", className: "flex-none" }}>
-      {mernStackSkills.map((skill, index) => (
-        <div key={index}>
-          <Card skill={skill} index={index} />
-        </div>
-      ))}
+    <IconContext.Provider value={{ size: "1.5em", className: "flex-none" }}>
+      <div className="w-11/12 mx-auto dark">
+        <Tabs
+          className="flex justify-center"
+          color="primary"
+          variant="underlined"
+          size="large"
+          defaultSelectedKey="0"
+          radius="full"
+        >
+          {finalSkills.map((skillCategory, index) => (
+            <Tab key={index} title={skillCategory.category}>
+              <SkillCardList skills={skillCategory.skills} />
+            </Tab>
+          ))}
+        </Tabs>
+      </div>
     </IconContext.Provider>
   );
 };
 
-const Card = ({ skill, index }) => {
-  return (
-    <div key={index} className={`py-20`}>
-      <div className="w-4/5 mx-auto grid lg:grid-cols-[1fr_2fr] grid-cols-1 gap-8 ">
-        <div className="">
-          <h2 className="text-5xl font-bold  sticky top-0 leading-relaxed ">
-            <span className="text-primary ">{skill.category}</span>
-          </h2>
-        </div>
-        <div className="space-y-12 ">
-          {skill.skills.map((skill, index1) => (
-            <div
-              key={index1}
-              className={` bg-gray-900  flex gap-4  items-center px-6  h-36 w-full backdrop-blur rounded-md border border-gray-800  hover:border-primary  hover:shadow-[0px_0px_10px_2px_#00dc82] transition-all duration-300 ease-in-out cursor-pointer`}
-            >
-              <p className="text-3xl font-bold w-1/12">0{index1 + 1}/</p>
+export default SkillCards;
 
-              <div className="ml-2 w-2/12 flex items-center gap-1">
-                {skill?.icon || <FaCode />}
-                {skill.name}
-              </div>
-              <p className="w-9/12">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
+const SkillCardList = ({ skills }) => {
+  return (
+    <div className="w-full grid gap-4 xl:grid-cols-4  lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-8">
+      {skills.map((skill, index) => (
+        <React.Fragment key={index}>
+          <SkillCard skill={skill} index={index} />
+        </React.Fragment>
+      ))}
     </div>
   );
 };
 
-export default SkillCards;
-function isEven(n) {
-  return n % 2 == 0;
-}
+const SkillCard = ({ skill, index }) => {
+  return (
+    <Card className="bg-slate-900 hover:bg-secondary/75 border border-gray-800 hover:border-primary transition-all ease-in-out duration-200 cursor-pointer ">
+      <CardHeader className="flex gap-2 pt-3">
+        <div className="rounded-full p-2 bg-primary/25 text-primary">
+          {skill?.icon || <FaCode />}
+        </div>
+        <p className="text-xl font-semibold">{skill.name}</p>
+      </CardHeader>
+      <CardBody className="">
+        <p className="text-gray-300">
+          {skill.description || "No description available"}
+        </p>
+      </CardBody>
+    </Card>
+  );
+};

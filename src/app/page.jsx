@@ -2,8 +2,8 @@ import Image from "next/image";
 import Button from "@/components/common/Button";
 import Link from "next/link";
 import HeroSkills from "@/components/homePage/HeroSkills";
-
 import SkillCards from "@/components/homePage/SkillCards";
+import { NextUIProviders } from "@/app/Providers";
 
 export default function Home() {
   return (
@@ -32,16 +32,24 @@ export default function Home() {
         </div>
         <HeroSkills />
       </section>
-      <section className="min-h-screen w-full mx-auto ">
+      <section className="min-h-screen w-full mx-auto bg-pattern-1 pb-8 relative">
+        {/* border */}
+        <div className="w-full h-1/2 bg-gradient-to-r from-primary to-secondary"></div>
+        <div className="glowing-border"></div>
         <h2 className="text-5xl text-center font-bold py-8 leading-relaxed ">
           <span className="text-primary ">Skills</span> I have to show
         </h2>
-        <div className="flex">
-          <div className="w-full ">
-            <SkillCards />
+        <div className="flex ">
+          <div className="w-full  z-[1] ">
+            <NextUIProviders>
+              <SkillCards />
+            </NextUIProviders>
           </div>
         </div>
+        <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-b from-transparent from-75% to-secondary  "></div>
+        <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-radial from-0% via-50% to-75% bg-no-repeat from-indigo-500/20 to-transparent bg-[length:80%_50%] bg-[50%_-50%]"></div>
       </section>
+      {/* <section className="min-h-screen w-full mx-auto"></section> */}
     </div>
   );
 }

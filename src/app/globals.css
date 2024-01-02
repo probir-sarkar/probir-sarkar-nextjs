@@ -11,3 +11,14 @@
     #400d64 100%
   );
 }
+
+.glowing-border {
+  @apply h-px bg-gradient-to-r from-transparent to-transparent via-indigo-900/80;
+}
+
+.bg-pattern-1 {
+  opacity: 1;
+  background-image: linear-gradient(rgb(0, 220, 130, 0.1) 1px, transparent 1px),
+    linear-gradient(to right, rgb(0, 220, 130, 0.1) 1px, transparent 1px);
+  background-size: 38px 38px;
+}
