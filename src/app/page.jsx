@@ -49,6 +49,7 @@ export default function Home() {
         <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-b from-transparent from-75% to-secondary  "></div>
         <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-radial from-0% via-50% to-75% bg-no-repeat from-indigo-500/20 to-transparent bg-[length:80%_50%] bg-[50%_-50%]"></div>
       </section>
+      <p>{process.env.DATABASE_URL}</p>
       {/* <section className="min-h-screen w-full mx-auto"></section> */}
     </div>
   );
