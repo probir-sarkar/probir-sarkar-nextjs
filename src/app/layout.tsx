@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import { Inter, DM_Sans } from "next/font/google";
 import "./globals.css";
-const inter = Inter({ subsets: ["latin"] });
-const dmSans = DM_Sans({ subsets: ["latin"] });
+import { dmSans } from "../styles/fonts";
 
 export const metadata: Metadata = {
   title: "Probir Sarkar - Full Stack Developer",
