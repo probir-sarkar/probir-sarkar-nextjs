@@ -3,6 +3,7 @@
 import db from "@/server/db";
 import { contactForm } from "@/server/db/schema";
 import { telegramMessageSender } from "@/server/configs/telegram";
+import env from "@/configs/env";
 
 interface ContactFormPayload {
   name: string;
@@ -29,18 +30,45 @@ export async function submitContactForm(state: any, formData: FormData) {
     const submitterEmail = formData.get("email")?.toString() || "";
     const submitterMessage = formData.get("message")?.toString() || "";
 
-    if (!submitterName || !submitterEmail || !submitterMessage) return;
+    if (!submitterName || !submitterEmail || !submitterMessage) return { submitted: false };
 
     const submissionPayload = { name: submitterName, email: submitterEmail, message: submitterMessage };
-    const databaseInsertResult = await db.insert(contactForm).values(submissionPayload).returning();
-    const telegramMessageSent = await sendTelegramMessage(submissionPayload);
 
-    if (Array.isArray(databaseInsertResult) && databaseInsertResult[0]?.id && telegramMessageSent) {
+    const [databaseInsertResult, telegramMessageSent, emailSent] = await Promise.all([
+      db.insert(contactForm).values(submissionPayload).returning(),
+      sendTelegramMessage(submissionPayload),
+      sendContactFormEmail(submissionPayload),
+    ]);
+
+    if (Array.isArray(databaseInsertResult) && databaseInsertResult[0]?.id && telegramMessageSent && emailSent) {
       return { submitted: true };
     }
+
     return { submitted: false };
   } catch (error) {
     console.error(error);
     return { submitted: false };
   }
+}
+
+async function sendContactFormEmail({ name, email, message }: ContactFormPayload) {
+  const options = {
+    method: "POST",
+    headers: {
+      accept: "application/json",
+      "content-type": "application/json",
+      "api-key": env.brevoApiKey,
+    },
+    body: JSON.stringify({
+      params: { NAME: name },
+      templateId: 1,
+      to: [{ email }],
+    }),
+  };
+
+  const res = await fetch("https://api.brevo.com/v3/smtp/email", options);
+  const emailSent = await res.json();
+  // check respose is 201 or not
+  console.log("status", res.status);
+  return emailSent;
 }
