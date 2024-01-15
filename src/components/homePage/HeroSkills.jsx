@@ -52,21 +52,21 @@ const HeroSkills = () => {
   const { skills } = skillData;
   return (
     <div className="">
-      <p className="text-center text-xl font-semibold">
-        My core specialties are in
-      </p>
-      <div className="flex w-10/12 mx-auto justify-center gap-4 flex-wrap py-8 fill-gray-300">
-        {skills.map((skill, index) => (
-          <div key={index} className="h-8 flex justify-center items-center">
-            <Image
-              src={skill.icon}
-              width={skill.width}
-              height={skill.height}
-              alt={skill.alt}
-              className="fill-gray-300 w-fit max-h-full "
-            />
-          </div>
-        ))}
+      <p className="text-center text-xl font-semibold">My core specialties are in</p>
+      <div className="w-10/12 mx-auto overflow-x-auto my-8">
+        <div className="flex  mx-auto w-max justify-center  gap-4  fill-gray-300">
+          {skills.map((skill, index) => (
+            <div key={index} className="h-8 flex flex-none justify-center items-center">
+              <Image
+                src={skill.icon}
+                width={skill.width}
+                height={skill.height}
+                alt={skill.alt}
+                className="fill-gray-300 w-fit max-h-full "
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

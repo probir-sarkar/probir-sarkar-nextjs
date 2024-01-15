@@ -55,7 +55,7 @@ const ContactForm = () => {
   return (
     <>
       <p>Please fill out the form below to send me an email and I will get back to you as soon as possible.</p>
-      <form action={formAction} className="mt-20 space-y-12 ">
+      <form action={formAction} className="xl:mt-20 mt-10 space-y-12 ">
         <input
           type="text"
           id="name"

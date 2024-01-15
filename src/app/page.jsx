@@ -12,7 +12,7 @@ export default function Home() {
     <div className="">
       <section className="min-h-screen flex flex-col justify-between bg-gradient-radial to-75% bg-no-repeat from-indigo-900/50 to-transparent">
         <div className=""></div>
-        <div className="">
+        <div className="w-10/12 mx-auto">
           <p className="text-center opacity-75 font-semibold mb-8 ">FULL STACK WEB DEVELOPER</p>
           <h1 className="text-5xl sm:text-7xl text-center font-bold">
             Hello, I’m
@@ -35,8 +35,8 @@ export default function Home() {
         {/* border */}
         <div className="w-full h-1/2 bg-gradient-to-r from-primary to-secondary"></div>
         <div className="glowing-border"></div>
-        <h2 className="text-5xl text-center font-bold py-8 leading-relaxed ">
-          <span className="text-primary ">Skills</span> I have to show
+        <h2 className="xl:text-5xl  text-3xl text-center font-bold py-8 leading-relaxed ">
+          <span className="text-primary ">Showcase</span> of my skills
         </h2>
         <div className="flex ">
           <div className="w-full  z-[1] ">
