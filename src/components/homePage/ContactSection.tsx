@@ -7,7 +7,7 @@ import { FaMedium } from "react-icons/fa6";
 const ContactSection = () => {
   return (
     <>
-      <section className="min-h-screen w-10/12 mx-auto py-8">
+      <section className="min-h-screen w-10/12 mx-auto py-8" id="contact">
         <h2 className="xl:text-5xl  text-3xl font-bold py-8 leading-relaxed ">
           <span className="text-primary">Get in Touch</span> with me
         </h2>
@@ -31,16 +31,16 @@ const ContactSection = () => {
             <div className="grid gap-2">
               <h5 className={`text-xl font-semibold ${dmSerifDisplay.className}`}>Social</h5>
               <div className="flex gap-4">
-                <Link href="https://www.linkedin.com/in/probir-sarkar">
+                <Link href="https://www.linkedin.com/in/probir-sarkar" target="_blank">
                   <FaLinkedin className="text-2xl" />
                 </Link>
-                <Link href="https://wa.me/919511549471">
+                <Link href="https://wa.me/919511549471" target="_blank">
                   <FaWhatsappSquare className="text-2xl" />
                 </Link>
-                <Link href="https://github.com/probir-sarkar">
+                <Link href="https://github.com/probir-sarkar" target="_blank">
                   <FaGithubSquare className="text-2xl" />
                 </Link>
-                <Link href="https://blog.probirsarkar.com/">
+                <Link href="https://blog.probirsarkar.com/" target="_blank">
                   <FaMedium className="text-2xl" />
                 </Link>
               </div>

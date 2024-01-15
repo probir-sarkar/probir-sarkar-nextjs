@@ -25,7 +25,7 @@ export default function Home() {
           </p>
           <div className="flex justify-center mt-8">
             <Button variant="primary">
-              <Link href="/contact">Contact Me</Link>
+              <Link href="#contact">Contact Me</Link>
             </Button>
           </div>
         </div>
