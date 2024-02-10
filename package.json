@@ -13,7 +13,7 @@
     "@neondatabase/serverless": "^0.6.1",
     "@nextui-org/react": "^2.2.9",
     "@uidotdev/usehooks": "^2.4.1",
-    "clsx": "^2.0.0",
+    "clsx": "^2.1.0",
     "drizzle-orm": "^0.29.3",
     "framer-motion": "^10.16.16",
     "next": "14.0.3",
