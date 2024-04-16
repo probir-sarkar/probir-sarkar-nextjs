@@ -29,6 +29,8 @@ yarn-error.log*
 .env*
 
 .package-lock.json
+.pnpm-lock.yaml
+
 
 # vercel
 .vercel

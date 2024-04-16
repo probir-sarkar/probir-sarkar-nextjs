@@ -10,28 +10,28 @@
     "db:push": "drizzle-kit push:pg"
   },
   "dependencies": {
-    "@neondatabase/serverless": "^0.8.0",
-    "@nextui-org/react": "^2.2.10",
+    "@neondatabase/serverless": "^0.9.1",
+    "@nextui-org/react": "^2.3.0",
     "@uidotdev/usehooks": "^2.4.1",
-    "clsx": "^2.0.0",
-    "drizzle-orm": "^0.29.4",
-    "framer-motion": "^10.16.16",
-    "next": "14.1.1",
-    "react": "^18",
-    "react-dom": "^18",
-    "react-icons": "^4.12.0",
-    "tailwind-merge": "^2.2.1"
+    "clsx": "^2.1.0",
+    "drizzle-orm": "^0.30.8",
+    "framer-motion": "^11.1.1",
+    "next": "14.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.1.0",
+    "tailwind-merge": "^2.2.2"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "autoprefixer": "^10.0.1",
-    "drizzle-kit": "^0.20.9",
-    "eslint": "^8",
-    "eslint-config-next": "14.0.3",
-    "postcss": "^8",
-    "tailwindcss": "^3.3.0",
-    "typescript": "^5"
+    "@types/node": "^20.12.7",
+    "@types/react": "^18.2.79",
+    "@types/react-dom": "^18.2.25",
+    "autoprefixer": "^10.4.19",
+    "drizzle-kit": "^0.20.14",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "14.2.1",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.5"
   }
 }
