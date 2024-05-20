@@ -2,7 +2,7 @@
 import { useFormState, useFormStatus } from "react-dom";
 import { motion } from "framer-motion";
 import React from "react";
-import { Button } from "@nextui-org/react";
+import { Button } from "@nextui-org/button";
 import { submitContactForm } from "./actions";
 import Image from "next/image";
 interface Props {
