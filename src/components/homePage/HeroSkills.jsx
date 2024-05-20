@@ -1,4 +1,3 @@
-import { NextJsIcon } from "@/components/icons/SkillsIcons";
 import Image from "next/image";
 
 const skillData = {
@@ -7,43 +6,31 @@ const skillData = {
       name: "React",
       icon: "/icons/react.svg",
       alt: "reactjs",
-      height: 32,
-      width: 96,
     },
     {
       name: "Next.js",
       icon: "/icons/nextjs-13.svg",
       alt: "nextjs",
-      height: 32,
-      width: 96,
     },
     {
       name: "MongoDB",
       icon: "/icons/MongoDB.svg",
       alt: "mongodb",
-      height: 32,
-      width: 96,
     },
     {
       name: "Node.js",
       icon: "/icons/nodejs.svg",
       alt: "nodejs",
-      height: 32,
-      width: 96,
     },
     {
       name: "Express.js",
       icon: "/icons/expressjs.svg",
       alt: "expressjs",
-      height: 32,
-      width: 96,
     },
     {
       name: "postgreSQL",
       icon: "/icons/postgresql-horizontal.svg",
       alt: "postgresql",
-      height: 32,
-      width: 128,
     },
   ],
 };
@@ -53,14 +40,14 @@ const HeroSkills = () => {
   return (
     <div className="">
       <p className="text-center text-xl font-semibold">My core specialties are in</p>
-      <div className="w-10/12 mx-auto overflow-x-auto my-8">
-        <div className="flex  mx-auto w-max justify-center  gap-4  fill-gray-300">
+      <div className="w-10/12 mx-auto  my-8">
+        <div className="flex  mx-auto flex-wrap justify-center  gap-4  fill-gray-300">
           {skills.map((skill, index) => (
-            <div key={index} className="h-8 flex flex-none justify-center items-center">
+            <div key={index} className="md:h-8 h-6  flex flex-none justify-center items-center">
               <Image
                 src={skill.icon}
-                width={skill.width}
-                height={skill.height}
+                width={96}
+                height={32}
                 alt={skill.alt}
                 className="fill-gray-300 w-fit max-h-full "
               />

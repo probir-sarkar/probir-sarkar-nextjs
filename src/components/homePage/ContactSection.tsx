@@ -7,7 +7,7 @@ import { FaMedium } from "react-icons/fa6";
 const ContactSection = () => {
   return (
     <>
-      <section className="min-h-screen w-10/12 mx-auto py-8" id="contact">
+      <section className="min-h-screen w-10/12 mx-auto md:mt-20" id="contact">
         <h2 className="xl:text-5xl  text-3xl font-bold py-8 leading-relaxed ">
           <span className="text-primary">Get in Touch</span> with me
         </h2>
