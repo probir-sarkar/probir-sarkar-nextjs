@@ -1,3 +1,13 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["eslint:recommended", "next/core-web-vitals"],
+  "rules": {
+    "react-hooks/exhaustive-deps": "off",
+    "no-unused-vars": "warn",
+    "no-useless-escape": "warn"
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  }
 }

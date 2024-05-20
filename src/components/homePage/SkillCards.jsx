@@ -5,7 +5,7 @@ import { FaCode } from "react-icons/fa";
 import { IconContext } from "react-icons";
 import { mernStackSkills } from "@/app/data";
 import { Tabs, Tab } from "@nextui-org/tabs";
-import { Card, CardHeader, CardBody } from "@nextui-org/react";
+import { Card, CardHeader, CardBody } from "@nextui-org/card";
 import { motion } from "framer-motion";
 
 const SkillCards = () => {
