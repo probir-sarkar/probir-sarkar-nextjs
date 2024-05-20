@@ -3,7 +3,7 @@ import Button from "@/components/common/Button";
 import Link from "next/link";
 import HeroSkills from "@/components/homePage/HeroSkills";
 import SkillCards from "@/components/homePage/SkillCards";
-import { NextUIProviders } from "@/app/Providers";
+import ProjectSection from "@/components/homePage/ProjectSection";
 
 import ContactSection from "@/components/homePage/ContactSection";
 
@@ -35,19 +35,18 @@ export default function Home() {
         {/* border */}
         <div className="w-full h-1/2 bg-gradient-to-r from-primary to-secondary"></div>
         <div className="glowing-border"></div>
-        <h2 className="xl:text-5xl  text-3xl text-center font-bold py-8 leading-relaxed ">
-          <span className="text-primary ">Showcase</span> of my skills
+        <h2 className="xl:text-5xl md:text-4xl text-3xl text-center font-bold py-8 leading-relaxed ">
+          Showcase of my <span className="text-primary">skills</span>
         </h2>
         <div className="flex ">
           <div className="w-full  z-[1] ">
-            <NextUIProviders>
-              <SkillCards />
-            </NextUIProviders>
+            <SkillCards />
           </div>
         </div>
         <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-b from-transparent from-75% to-secondary  "></div>
         <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-radial from-0% via-50% to-75% bg-no-repeat from-indigo-500/20 to-transparent bg-[length:80%_50%] bg-[50%_-50%]"></div>
       </section>
+      <ProjectSection />
       <ContactSection />
     </div>
   );

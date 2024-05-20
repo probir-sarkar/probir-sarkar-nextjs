@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { dmSans } from "../styles/fonts";
 import React from "react";
+import { NextUIProviders } from "@/app/Providers";
 
 export const metadata: Metadata = {
   title: "Probir Sarkar - Full Stack Developer",
@@ -13,7 +14,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={`${dmSans.className} bg-secondary`}>
-        <main className="text-white ">{children}</main>
+        <NextUIProviders>
+          <main className="text-white ">{children}</main>
+        </NextUIProviders>
       </body>
     </html>
   );
