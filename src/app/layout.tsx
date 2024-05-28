@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: "/og-image.jpg",
+        url: "https://ik.imagekit.io/probir/probirsarkar.com/og-image.jpg?updatedAt=1716879552254",
         width: 1200,
         height: 630,
         alt: "Probir Sarkar - Full Stack Developer",
