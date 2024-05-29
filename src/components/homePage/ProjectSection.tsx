@@ -12,7 +12,7 @@ const ProjectSection = async () => {
   const projects = await allProjects();
   if (!projects) return <div></div>;
   return (
-    <section className="w-11/12 mx-auto md:mt-36 ">
+    <section className="w-11/12 mx-auto md:mt-24 ">
       <h2 className="xl:text-5xl  md:text-4xl text-3xl text-center font-bold xl:mb-12 md:mb-8 mb-4 leading-relaxed ">
         Personal <span className="text-primary ">Projects</span>
       </h2>

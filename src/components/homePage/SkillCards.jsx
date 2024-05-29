@@ -56,7 +56,7 @@ const SkillCard = ({ skill, index }) => {
     >
       <Card className="w-full h-full bg-slate-900 hover:bg-secondary/75 border border-gray-800 hover:border-primary transition-all ease-in-out duration-200 cursor-pointer ">
         <CardHeader className="flex gap-2 pt-3">
-          <div className="rounded-full p-2 bg-primary/25 text-primary">{skill?.icon || <FaCode />}</div>
+          <div className="rounded-full p-2 bg-primary/25 text-primary">{<skill.icon /> || <FaCode />}</div>
           <p className="text-xl font-semibold">{skill.name}</p>
         </CardHeader>
         <CardBody className="">
