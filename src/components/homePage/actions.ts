@@ -21,7 +21,7 @@ export type Project = {
 
 export const allProjects = async () => {
   try {
-    return await client.request<Project[]>(readItems("projects"));
+    return await fetch("https://probir.dev/api/external/projects").then((res) => res.json());
   } catch (e) {
     return false;
   }

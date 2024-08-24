@@ -19,7 +19,7 @@ export const contactFormSchema = z.object({
   message: z
     .string()
     .min(10, { message: "Message must be at least 10 characters long." })
-    .max(2000, { message: "Message must be at most 2000 characters long." }),
+    .max(2000, { message: "Message must be at most 2000 characters long." })
 });
 type ContactFields = z.infer<typeof contactFormSchema>;
 
@@ -28,15 +28,21 @@ const ContactForm = () => {
     register,
     reset,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: { errors, isSubmitting }
   } = useForm<ContactFields>({
-    resolver: zodResolver(contactFormSchema),
+    resolver: zodResolver(contactFormSchema)
   });
   const [submitted, setSubmitted] = useState(false);
   const onSubmit: SubmitHandler<ContactFields> = async (data) => {
     try {
-      const submitForm = await submitContactForm(data);
-      if (!submitForm) throw new Error("Failed to submit form");
+      const submitForm = await fetch("https://probir.dev/api/external/contact-form", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      }).then((res) => res.json());
+      if (!submitForm?.success) throw new Error("Failed to submit form");
       toast.success("Form submitted successfully");
       setSubmitted(true);
     } catch (e) {
@@ -52,7 +58,7 @@ const ContactForm = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{
             duration: 0.5,
-            type: "spring",
+            type: "spring"
           }}
           className="text-center text-2xl font-semibold"
         >
