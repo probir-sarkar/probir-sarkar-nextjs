@@ -6,9 +6,9 @@ import { z } from "zod";
 import { useForm } from "react-hook-form";
 import type { SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { submitContactForm } from "./actions";
 import Image from "next/image";
 import { toast } from "sonner";
+import { env } from "@/env";
 
 export const contactFormSchema = z.object({
   name: z
@@ -35,7 +35,7 @@ const ContactForm = () => {
   const [submitted, setSubmitted] = useState(false);
   const onSubmit: SubmitHandler<ContactFields> = async (data) => {
     try {
-      const submitForm = await fetch("https://probir.dev/api/external/contact-form", {
+      const submitForm = await fetch(env.NEXT_PUBLIC_API_URL + "/contact-form", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

@@ -1,6 +1,7 @@
 "use server";
 import { client, directus } from "@/configs/directus";
 import { createItem, readItems } from "@directus/sdk";
+import { env } from "@/env";
 import { boolean } from "zod";
 
 export const submitContactForm = async (data: any) => {
@@ -22,7 +23,7 @@ export type Project = {
 
 export const allProjects = async () => {
   try {
-    const res: Project[] = await fetch("https://probir.dev/api/external/projects").then((res) => res.json());
+    const res: Project[] = await fetch(env.NEXT_PUBLIC_API_URL +"/projects").then((res) => res.json());
     return res;
   } catch (e) {
     return false;
