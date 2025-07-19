@@ -19,10 +19,10 @@ const HeroSkills = () => {
             >
               <Image
                 src={skill.icon}
-                width={96}
-                height={32}
                 alt={skill.alt}
-                className="fill-gray-300 w-fit max-h-full "
+                width={0}
+                height={0}
+                className="fill-gray-300  w-fit max-h-full "
               />
             </div>
           ))}

@@ -9,11 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@heroui/card": "^2.2.22",
     "@heroui/react": "^2.8.1",
-    "@heroui/system": "^2.4.19",
-    "@heroui/tabs": "^2.2.20",
-    "@heroui/theme": "^2.4.19",
     "@hookform/resolvers": "^5.1.1",
     "appwrite": "^18.1.1",
     "framer-motion": "^12.23.6",

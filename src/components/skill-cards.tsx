@@ -2,8 +2,8 @@
 import React from "react";
 import { IconContext } from "react-icons";
 import { mernStackSkills, Skill } from "@/data/index";
-import { Tabs, Tab } from "@heroui/tabs";
-import { Card, CardHeader, CardBody } from "@heroui/card";
+import { Tabs, Tab } from "@heroui/react";
+import { Card, CardHeader, CardBody } from "@heroui/react";
 import { motion } from "framer-motion";
 
 const SkillCards = () => {
