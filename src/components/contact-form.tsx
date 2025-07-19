@@ -36,10 +36,11 @@ const ContactForm = () => {
   const onSubmit: SubmitHandler<ContactFields> = async (data) => {
     try {
       const submitForm = await sendTelegramMessage(data);
-      if (!submitForm?.success) throw new Error("Failed to submit form");
+      if (!submitForm) throw new Error("Failed to submit form");
       toast.success("Form submitted successfully");
       setSubmitted(true);
     } catch (e) {
+      console.error(e);
       toast.error("Failed to submit form");
     }
   };

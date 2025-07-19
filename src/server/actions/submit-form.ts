@@ -18,8 +18,7 @@ export async function telegramMessageSender(message: string) {
       body: JSON.stringify(data),
     };
     const res = await fetch(url, options);
-    const jsonResponse = await res.json();
-    return jsonResponse;
+    return true;
   } catch (e) {
     return false;
   }
