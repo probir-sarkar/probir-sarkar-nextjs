@@ -13,7 +13,7 @@
     "@hookform/resolvers": "^5.1.1",
     "appwrite": "^18.1.1",
     "framer-motion": "^12.23.6",
-    "next": "15.4.2",
+    "next": "15.4.8",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-hook-form": "^7.60.0",
