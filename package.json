@@ -11,7 +11,8 @@
   "dependencies": {
     "@heroui/react": "^2.8.1",
     "@hookform/resolvers": "^5.1.1",
-    "appwrite": "^18.1.1",
+    "@marsidev/react-turnstile": "^1.4.1",
+    "axios": "^1.13.2",
     "framer-motion": "^12.23.6",
     "next": "16.1.1",
     "react": "19.1.0",

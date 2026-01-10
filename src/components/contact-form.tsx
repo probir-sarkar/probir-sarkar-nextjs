@@ -1,4 +1,6 @@
 "use client";
+import { Turnstile } from "@marsidev/react-turnstile";
+
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { Button } from "@heroui/react";
@@ -15,11 +17,16 @@ export const contactFormSchema = z.object({
     .string()
     .min(2, { message: "Name must be at least 2 characters long." })
     .max(36, { message: "Name must be at most 36 characters long." }),
-  email: z.string().email({ message: "Please enter a valid email address." }),
+  email: z.email({ message: "Please enter a valid email address." }),
   message: z
     .string()
     .min(10, { message: "Message must be at least 10 characters long." })
     .max(2000, { message: "Message must be at most 2000 characters long." }),
+  turnstileToken: z
+    .string({
+      error: "Please complete the CAPTCHA verification."
+    })
+    .min(1, { message: "Please complete the CAPTCHA verification." })
 });
 export type ContactFields = z.infer<typeof contactFormSchema>;
 
@@ -28,9 +35,10 @@ const ContactForm = () => {
     register,
     reset,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    setValue,
+    formState: { errors, isSubmitting }
   } = useForm<ContactFields>({
-    resolver: zodResolver(contactFormSchema),
+    resolver: zodResolver(contactFormSchema)
   });
   const [submitted, setSubmitted] = useState(false);
   const onSubmit: SubmitHandler<ContactFields> = async (data) => {
@@ -53,34 +61,20 @@ const ContactForm = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{
             duration: 0.5,
-            type: "spring",
+            type: "spring"
           }}
           className="text-center text-2xl font-semibold"
         >
-          <Image
-            src="/graphics/mail-send.svg"
-            className="w-4/6 mx-auto my-8"
-            alt="emoji"
-            width={500}
-            height={500}
-          />
+          <Image src="/graphics/mail-send.svg" className="w-4/6 mx-auto my-8" alt="emoji" width={500} height={500} />
         </motion.div>
         <p className="text-center">Thank you for your message!</p>
-        <p className="text-center">
-          I will get back to you as soon as possible.
-        </p>
+        <p className="text-center">I will get back to you as soon as possible.</p>
       </div>
     );
   return (
     <>
-      <p>
-        Please fill out the form below to send me an email and I will get back
-        to you as soon as possible.
-      </p>
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="xl:mt-20 mt-10 space-y-12 "
-      >
+      <p>Please fill out the form below to send me an email and I will get back to you as soon as possible.</p>
+      <form onSubmit={handleSubmit(onSubmit)} className="xl:mt-20 mt-10 space-y-12 ">
         <div className="">
           <input
             type="text"
@@ -114,6 +108,14 @@ const ContactForm = () => {
             {...register("message")}
           />
           <p className="text-red-500 text-sm">{errors.message?.message}</p>
+        </div>
+        <div className="">
+          <Turnstile
+            siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+            onSuccess={(token) => setValue("turnstileToken", token, { shouldValidate: true })}
+            onExpire={() => setValue("turnstileToken", "", { shouldValidate: true })}
+          />
+          <p className="text-red-500 text-sm">{errors.turnstileToken?.message}</p>
         </div>
         <Button
           type="submit"
