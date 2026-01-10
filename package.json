@@ -16,7 +16,7 @@
     "framer-motion": "^12.23.6",
     "next": "16.1.1",
     "react": "19.1.0",
-    "react-dom": "19.1.0",
+    "react-dom": "19.1.1",
     "react-hook-form": "^7.60.0",
     "react-icons": "^5.5.0",
     "sonner": "^2.0.6",
