@@ -1,7 +1,7 @@
 "use client";
 import { Turnstile } from "@marsidev/react-turnstile";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import React, { useState } from "react";
 import { Button } from "@heroui/react";
 import { z } from "zod";

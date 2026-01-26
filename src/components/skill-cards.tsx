@@ -4,7 +4,7 @@ import { IconContext } from "react-icons";
 import { mernStackSkills, Skill } from "@/data/index";
 import { Tabs, Tab } from "@heroui/react";
 import { Card, CardHeader, CardBody } from "@heroui/react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 const SkillCards = () => {
   const allSkills = mernStackSkills.flatMap(
