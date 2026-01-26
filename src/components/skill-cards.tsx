@@ -15,7 +15,7 @@ const SkillCards = () => {
     ...mernStackSkills,
   ];
   return (
-    <IconContext.Provider value={{ size: "1.5em", className: "flex-none" }}>
+    <IconContext.Provider value={{ size: "1.2em", className: "flex-none" }}>
       <div className="w-11/12 mx-auto dark">
         <Tabs
           className="flex justify-center"
@@ -55,7 +55,7 @@ const SkillCard = ({ skill, index }: { skill: Skill; index: number }) => {
     <motion.div
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{ opacity: 1, scale: 1 }}
-      transition={{ ease: "linear", delay: index * 0.1 }}
+      transition={{ ease: "linear", delay: index * 0.05 }}
     >
       <Card className="w-full h-full bg-slate-900 hover:bg-secondary/75 border border-gray-800 hover:border-primary transition-all ease-in-out duration-200 cursor-pointer ">
         <CardHeader className="flex gap-2 pt-3">
